@@ -25,6 +25,6 @@ for row in csv.readlines():
       r = r.replace(",,",",")
   except ValueError:
     pass # ignore not finding any more commas
-  r = r[:-2] # removes \n and the last comma
-  writer.writerow(r.split(",")) # write a row to the csv file
+  r = r[:-1] # removes \n and the last comma
+  writer.writerow(r.split(",")[1:]) # write a row to the csv file
 f.close() # close the file
